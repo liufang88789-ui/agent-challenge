@@ -107,7 +107,7 @@ GoAgent knows about OpenClaw agent skills including:
 - [ ] Live Nosana deployment URL
 - [ ] Demo video (<1 minute)
 - [ ] Social media post (X/Twitter)
-- [ ] GitHub stars on Nosana repos
+- [x] GitHub stars on Nosana repos (✓ starred: agent-challenge, nosana-programs, nosana-kit, nosana-cli)
 
 ## Links
 
