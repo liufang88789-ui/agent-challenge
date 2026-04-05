@@ -23,53 +23,22 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Log in to Docker Hub (optional)
-        if: secrets.DOCKERHUB_USERNAME != ''
-        uses: docker/login-action@v3
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-
       - name: Extract metadata
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: |
-            ghcr.io/${{ github.repository }}/agent
-            ${{ secrets.DOCKERHUB_USERNAME }}/nosana-eliza-agent
+          images: ghcr.io/${{ github.repository }}/agent
           tags: |
             type=ref,event=branch
-            type=ref,event=pr
             type=sha,prefix={{branch}}-
             type=raw,value=latest,enable={{is_default_branch}}
 
-      - name: Build and push GitHub Container Registry
+      - name: Build and push
         uses: docker/build-push-action@v5
         with:
           context: .
           push: true
-          tags: ghcr.io/${{ github.repository }}/agent:{{github.ref_name}}
           tags: ghcr.io/${{ github.repository }}/agent:latest
           cache-from: type=gha
           cache-to: type=gha,mode=max
           platforms: linux/amd64
-
-      - name: Build and push Docker Hub (if credentials available)
-        if: secrets.DOCKERHUB_USERNAME != ''
-        uses: docker/build-push-action@v5
-        with:
-          context: .
-          push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/nosana-eliza-agent:latest
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
-          platforms: linux/amd64
-
-      - name: Image built info
-        run: |
-          echo "✅ Docker image built successfully"
-          echo "📦 GHCR: ghcr.io/${{ github.repository }}/agent:latest"
-          echo "📦 Docker Hub: ${{ secrets.DOCKERHUB_USERNAME }}/nosana-eliza-agent:latest"
-          echo ""
-          echo "To deploy to Nosana:"
-          echo "  nosana job deploy --job ./nos_job_def/nosana_eliza_job_definition.json --network solana"
