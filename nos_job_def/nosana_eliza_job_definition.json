@@ -1,9 +1,14 @@
 {
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "cli"
+  },
   "ops": [
     {
       "id": "agent",
       "args": {
-        "image": "liufang88789-ui/nosana-eliza-agent:latest",
+        "image": "ghcr.io/liufang88789-ui/agent-challenge/agent:latest",
         "expose": 3000,
         "env": {
           "OPENAI_API_KEY": "nosana",
@@ -18,6 +23,5 @@
       },
       "type": "container/run"
     }
-  ],
-  "version": "0.1"
+  ]
 }
