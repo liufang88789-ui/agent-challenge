@@ -1,26 +1,28 @@
 /**
  * ClawForge — Personal Bounty Intelligence Agent
  * 
- * A personal AI agent that helps with bounty hunting:
- * - Finds and evaluates high-value opportunities across Superteam, Algora, GitHub
- * - Tracks active PR submissions and monitors for review/comments
- * - Provides strategic intelligence on the bounty landscape
+ * Built for: Nosana Builders Challenge × ElizaOS ($3K USDC)
+ * Agent: ClawForge — personal AI for bounty hunting
  * 
- * Built with ElizaOS v2 + deployed on Nosana decentralized GPU network.
- * Inspired by OpenClaw: autonomous, self-hosted, operator-controlled AI.
+ * This agent helps discover, evaluate, and execute high-value
+ * bounty opportunities across Superteam, Algora, and GitHub.
  * 
- * Required for submission:
- * - Public GitHub fork ✓ (liufang88789-ui/agent-challenge)
- * - Live Nosana deployment (see Dockerfile)
- * - Project description (see README)
- * - Video demo (<1 min) — see /demo link
- * - Social post ✓ (see Twitter/X)
- * - Stars on Nosana repos ✓ (agent-challenge, nosana-programs, nosana-kit, nosana-cli)
+ * Key Features:
+ * - Bounty discovery and ranking across 3 major platforms
+ * - PR status tracking for active submissions
+ * - Strategic intelligence on the bounty landscape
+ * - AGENT_ALLOWED bounty filtering (our specialty)
+ * 
+ * Submission checklist:
+ * ✅ Public GitHub fork (liufang88789-ui/agent-challenge)
+ * ⏳ Live Nosana deployment URL (in progress)
+ * ✅ README with project description
+ * ⏳ Video demo (<1 min, in progress)
+ * ⏳ Twitter/X post (in progress)
+ * ✅ Stars on Nosana repos (agent-challenge, nosana-programs, nosana-kit, nosana-cli)
+ * 
+ * Tech Stack: ElizaOS v2 + TypeScript + Docker + Nosana GPU network
  */
 
-import { clawForgePlugin } from "./bounty-plugin";
-
-export { clawForgePlugin };
-
-// Re-export for easy import
-export default clawForgePlugin;
+export { clawForgePlugin } from "./bounty-plugin";
+export { clawForgePlugin as default } from "./bounty-plugin";
