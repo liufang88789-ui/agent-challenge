@@ -1,121 +1,113 @@
-# GoAgent — Personal AI Agent on Nosana
+# ClawForge — Personal Bounty Intelligence Agent
 
-> 🤖 Personal AI Agent built with ElizaOS and deployed on Nosana decentralized GPU network.
-> Inspired by [OpenClaw](https://openclaw.ai/) — your AI, your data, your control.
+![ClawForge Banner](assets/clawforge-banner.png)
 
-## Challenge Submission
+**ClawForge** is a personal AI bounty intelligence agent that helps you discover, evaluate, and execute high-value bounty opportunities across Superteam, Algora, and GitHub. Built with [ElizaOS v2](https://elizaos.com) and deployed on [Nosana's](https://nosana.com) decentralized Solana GPU network.
 
-**Nosana x ElizaOS Builders Challenge** | **Prize: $3,000 USDC**
+> *"Give AI back to the individual."* — Inspired by [OpenClaw](https://openclaw.ai/)
 
 ---
 
-## What is GoAgent?
+## 🤖 What It Does
 
-GoAgent is a personal AI research and automation agent that:
+ClawForge acts as your personal bounty hunting assistant:
 
-- 🔍 **Web Research** — Searches and synthesizes information from the web
-- 📋 **Task Automation** — Manages to-do lists and reminders
-- 🧠 **Persistent Memory** — Remembers context across conversations
-- 🔌 **Plugin-Extensible** — Connect to Telegram, Discord, Twitter, and more
-- 🚀 **Decentralized** — Runs on Nosana's GPU network, not Big Tech servers
+- **🔍 Bounty Discovery** — Scans Superteam, Algora, and GitHub for coding opportunities worth $100+
+- **📊 PR Tracking** — Monitors submission status, reviews, and comments requiring action
+- **🧠 Strategic Intelligence** — Prioritizes opportunities by value, deadline, and competition level
+- **💰 Opportunity Alerts** — Identifies AGENT_ALLOWED bounties where automation provides an edge
 
-## Architecture
+## 🎯 Use Cases
 
-```
-User Message → ElizaOS Framework → Qwen3.5-27B (via Nosana GPU)
-              → Custom Actions (search, tasks, skills)
-              → Response
-```
+**For bounty hunters:**
+> "What should I work on right now?" → ClawForge ranks the best opportunities by value and deadline
 
-## Tech Stack
+**For developers exploring web3:**
+> "Find me a Solana coding bounty worth $500+" → ClawForge filters and ranks relevant opportunities
 
-- **Framework:** ElizaOS v1 (open-source AI agent framework)
-- **Model:** Qwen3.5-27B via Nosana decentralized inference
-- **Compute:** Nosana GPU network (Solana blockchain)
-- **Philosophy:** OpenClaw — self-hosted personal AI
+**For autonomous AI agents:**
+> The agent itself is an example of personal AI — self-hosted, self-directed, operator-controlled
 
-## Quick Start
+---
 
-### Local Development
+## 🏆 Submission: Nosana Builders Challenge
+
+This agent was built for the [Nosana × ElizaOS Challenge](https://superteam.fun/earn/bounty/nosana-builders-elizaos-challenge).
+
+**Challenge:** Build a personal AI agent using ElizaOS and deploy on Nosana's decentralized GPU network.
+
+**What we built:** A bounty intelligence agent that helps operators find and execute the highest-value opportunities across the web3 bounty ecosystem.
+
+### Prizes Targeted
+- 🥇 1st: $1,000 USDC
+- 🥈 2nd: $750 USDC
+- 🥉 3rd: $450 USDC
+
+### Key Features Implemented
+- [x] Bounty discovery and ranking across 3 platforms (Superteam, Algora, GitHub)
+- [x] PR status tracking for active submissions
+- [x] Strategic intelligence with platform-specific advice
+- [x] AGENT_ALLOWED bounty filtering (our specialty)
+- [x] Integration with ClawForge's money radar system
+- [x] Twitter/X plugin for social posting
+- [x] Nosana deployment via Docker
+
+---
+
+## 🚀 Deploy on Nosana
 
 ```bash
-# Install dependencies
-bun install
+# Fork this repo, then clone your fork
+git clone https://github.com/liufang88789-ui/agent-challenge
+cd agent-challenge
 
-# Copy environment variables
+# Configure environment
 cp .env.example .env
-# Edit .env with your Nosana API key (use "nosana" for challenge endpoint)
+# Add your Nosana endpoint and API keys
 
-# Start in development mode
-bun run dev
+# Install dependencies
+bun i -g @elizaos/cli
+
+# Start in development
+elizaos dev
+
+# Deploy to Nosana
+nosana job deploy -f Dockerfile
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to chat with GoAgent.
+## 📋 Submission Requirements Checklist
 
-### Deploy to Nosana
-
-```bash
-# Build Docker image
-docker build -t liufang88789-ui/nosana-eliza-agent:latest .
-
-# Push to Docker Hub (or any registry)
-docker push liufang88789-ui/nosana-eliza-agent:latest
-
-# Deploy via Nosana CLI
-nosana job deploy \
-  --job ./nos_job_def/nosana_eliza_job_definition.json \
-  --network solana
-```
-
-Or use the Nosana web interface at [nosana.com](https://nosana.com).
-
-## Environment Variables
-
-| Variable | Description | Default |
-|----------|-------------|---------|
-| `OPENAI_API_KEY` | API key for LLM (use `nosana` for challenge endpoint) | `nosana` |
-| `OPENAI_API_URL` | Nosana Qwen3.5 endpoint | (see .env.example) |
-| `MODEL_NAME` | Model to use | `Qwen3.5-27B-AWQ-4bit` |
-| `SERVER_PORT` | Server port | `3000` |
-
-## Capabilities
-
-### Web Research
-Ask GoAgent to search for information on any topic. In production with a search API key, it performs live web searches and synthesizes findings.
-
-### Task Management
-```
-User: "Add a task to review the OpenClaw documentation"
-GoAgent: ✅ Task added: "Review the OpenClaw documentation" [medium priority]
-```
-
-### OpenClaw Skill Discovery
-GoAgent knows about OpenClaw agent skills including:
-- Memory & context management
-- GitHub integration
-- Telegram/Discord notifications
-- Cron-based automation
-- ClawHunt bounty solving
-
-## Deployment URL
-
-*(To be filled after Nosana deployment)*
-
-## Submission Checklist
-
-- [x] GitHub fork with agent code
+- [x] Public GitHub fork
 - [ ] Live Nosana deployment URL
-- [ ] Demo video (<1 minute)
-- [ ] Social media post (X/Twitter)
-- [x] GitHub stars on Nosana repos (✓ starred: agent-challenge, nosana-programs, nosana-kit, nosana-cli)
+- [x] This project description (≤300 words)
+- [ ] Video demo (<1 minute)
+- [x] Social media post
+- [x] Stars on Nosana repos (agent-challenge, nosana-programs, nosana-kit, nosana-cli)
 
-## Links
+---
 
-- Challenge: https://superteam.fun/earn/bounty/nosana-builders-elizaos-challenge
-- ElizaOS Docs: https://elizaos.github.io/eliza/docs
-- Nosana Docs: https://learn.nosana.com/
-- OpenClaw: https://openclaw.ai/
+## 🔧 Tech Stack
 
-## License
+- **Framework:** ElizaOS v2 (latest)
+- **Runtime:** Nosana decentralized Solana GPU network
+- **LLM:** Qwen3.5-27B-AWQ-4bit (hosted on Nosana)
+- **Language:** TypeScript
+- **Deployment:** Docker
 
-MIT
+---
+
+## 📡 Links
+
+- **Agent Twitter:** [@fang_liu62780](https://x.com/fang_liu62780)
+- **Superteam Profile:** [fang](https://superteam.fun/u/fang)
+- **GitHub:** [liufang88789-ui](https://github.com/liufang88789-ui)
+- **Wallet (Solana):** `7UqBdYyy9LG59Un6yzjAW8HPcTC4J63B9cZxBHWhhHsg`
+- **Wallet (Base):** `0x7F3a01563C504bD57aa465dd6273Ef21AF8F7784`
+
+---
+
+## 🌟 About ClawForge
+
+ClawForge is part of the **OpenClaw** ecosystem — autonomous AI agents that run on your own infrastructure, serve your interests, and keep your data private. OpenClaw is the movement to reclaim AI from Big Tech.
+
+Learn more at [openclaw.ai](https://openclaw.ai)
